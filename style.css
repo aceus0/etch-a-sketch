@@ -7,9 +7,5 @@ body {
     flex-wrap: wrap;
     height: 512px;
     width: 512px;
-    border: 2px solid;
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
-}
 
+}
