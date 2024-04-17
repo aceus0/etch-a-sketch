@@ -54,9 +54,10 @@ const newGrid = document.querySelector("#newGrid");
 
 newGrid.addEventListener('click', ()=> {
     let userInput = prompt(`Please enter how large you'd like to make the gird.\nThe maximum size is 100x100.\n\nEx. for a 50x50 grid, type "50".`);
+    userInput = userInput
         if (isNaN(userInput)){
             alert(`You must type a number!`)
-        } else if (userInput > 100) {
+        } else if (userInput > 100 || userInput < -100) {
         alert(`${userInput} is too large!`)
         } else if (userInput == null) {}
         else {
