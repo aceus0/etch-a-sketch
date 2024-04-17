@@ -1,19 +1,26 @@
 
 
+function addBoxes(numBoxes) {
+    
+    const container = document.querySelector("#container");
+    const containerSize = 512;
 
-const container = document.querySelector("#container");
+    const boxesPerRow = Math.floor(Math.sqrt(numBoxes));
+    const boxSize = Math.floor((containerSize / boxesPerRow) - 0.1);
 
     let i = 0
-    while (i < 256) {
-    const pixel = document.createElement("div");
-    pixel.style.backgroundColor = "white";
-    pixel.style.height = "32px";
-    pixel.style.width = "32px";
-    pixel.setAttribute("id", "pixel");
- 
-    container.appendChild(pixel);
-    i++
+    while (i < numBoxes) {
+        const pixel = document.createElement("div");
+        pixel.style.backgroundColor = "white";
+        pixel.setAttribute("id", "pixel");
+        pixel.style.width =`${boxSize}px`
+        pixel.style.height = `${boxSize}px`
+        container.appendChild(pixel);
+        i++
     }
+}
+
+addBoxes();
 
 const highlightPixel = (e) => {
     target.style.backgroundColor = "black"
@@ -28,8 +35,6 @@ pixels.forEach(pixel => {
     })
 });
 
-const clearButton = document.querySelector("#clear")
 
-clearButton.addEventListener(`click`, () => {
-    pixels.style.backgroundColor = 'white';
-})
+
+
